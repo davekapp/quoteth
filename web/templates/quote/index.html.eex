@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Quote</th>
+      <th>Quotee</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <%= for q <- @quotes do %>
+    <tr>
+      <td>
+        <a href="<%= quote_path(@conn, :show, q.id) %>">
+          <%= q.saying %>
+        </a>
+      </td>
+      <td><%= q.author %></td>
+      <td>
+        <a href="<%= quote_path(@conn, :edit, q.id) %>">
+          Edit
+        </a>
+
+        <a href="<%= quote_path(@conn, :delete, q.id, _csrf_token: csrf_token(@conn)) %>" data-method="delete">
+          Delete
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,7 @@
+<h1>Quotable Details</h1>
+
+<h2><%= @quote.saying %></h2>
+
+<h2>
+  &nbsp; &nbsp;--<%= @quote.author %>
+</h2>

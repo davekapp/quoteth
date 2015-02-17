@@ -1,0 +1,3 @@
+<div>Some wisdom to help you through your day:</div>
+
+<%= for quote <- @quotes, do: render("_quote.html", quote: quote) %>
