@@ -98,7 +98,28 @@ var CommentForm = React.createClass({
   }
 });
 
+var CommentHug = React.createClass({
+  render: function() {
+    var text = this.props.hugged ? "❤️ You hugged this! ❤️" : "You haven't hugged this. :(";
+    var styles = {border: "1px blue dotted", borderRadius: "3px", fontSize: "50%", display: "inline-block", verticalAlign: "middle", marginLeft: "10px"};
+
+    return(
+      <div onClick={this.props.toggleHug} style={styles}>
+        {text} (Click to change)
+      </div>
+    );
+  }
+});
+
 var Comment = React.createClass({
+  getInitialState: function() {
+    return {hugged: false};
+  },
+
+  toggleHug: function() {
+    this.setState({hugged: !this.state.hugged});
+  },
+
   render: function() {
     var rawMarkup = converter.makeHtml(this.props.children.toString());
     /*
@@ -114,6 +135,7 @@ var Comment = React.createClass({
       <div className="comment">
         <h2 className="commentAuthor">
           {this.props.author}
+          <span className="hug"><CommentHug hugged={this.state.hugged} toggleHug={this.toggleHug} /></span>
         </h2>
         <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
       </div>
@@ -123,5 +145,5 @@ var Comment = React.createClass({
 
 React.render(
   <CommentBox url="http://localhost:4000/api/v1/comments" pollInterval={2000} />,
-  document.getElementById("article-content")
+  document.getElementById("article-comments")
 );
