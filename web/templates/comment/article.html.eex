@@ -1,0 +1,8 @@
+<h1>OH LOOK</h1>
+<h3>An Article</h3>
+
+<div id="article-comments">
+</div>
+
+
+<script type="text/jsx" src="/js/comment/react-tutorial.js"></script>

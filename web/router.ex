@@ -17,6 +17,15 @@ defmodule Quoteth.Router do
 
     get "/", QuoteController, :homepage
     resources "/quotes", QuoteController
+
+    get "/article", CommentController, :article
+  end
+
+  scope "/api/v1/", Quoteth do
+    pipe_through :api
+
+    get "/comments", CommentController, :index
+    post "/comments", CommentController, :create
   end
 
   # Other scopes may use custom stacks.
