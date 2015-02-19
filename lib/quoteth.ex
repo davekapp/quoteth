@@ -11,7 +11,8 @@ defmodule Quoteth do
       supervisor(Quoteth.Endpoint, []),
       # Here you could define other workers and supervisors as children
       # worker(Quoteth.Worker, [arg1, arg2, arg3]),
-      worker(Quoteth.Repo, [])
+      worker(Quoteth.Repo, []),
+      worker(Quoteth.CommentHolder, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
