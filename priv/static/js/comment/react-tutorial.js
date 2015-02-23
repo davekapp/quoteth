@@ -41,6 +41,7 @@ var CommentBox = React.createClass({
 
   componentDidMount: function() {
     this.loadCommentsFromServer();
+    // enable if you want updates, but disabled for now to make tracking network calls easier
     //setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
 

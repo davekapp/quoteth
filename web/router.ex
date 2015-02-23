@@ -26,6 +26,8 @@ defmodule Quoteth.Router do
 
     get "/comments", CommentController, :index
     post "/comments", CommentController, :create
+
+    get "/quotes/homepage_quotes", QuoteController, :homepage_quotes
   end
 
   # Other scopes may use custom stacks.

@@ -1,3 +1,7 @@
 <div>Some wisdom to help you through your day:</div>
 
+<div id="quotes">
 <%= for quote <- @quotes, do: render("_quote.html", quote: quote) %>
+</div>
+
+<script type="text/jsx" src="/js/quote/quote.js"></script>

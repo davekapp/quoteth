@@ -16,6 +16,10 @@ defmodule Quoteth.QuoteController do
     |> render "homepage.html"
   end
 
+  def homepage_quotes(conn, _params) do
+    json conn, Quoteth.Quote.random(2)
+  end
+
   def index(conn, _params) do
     conn
     |> assign(:quotes, Repo.all(Quoteth.Quote))

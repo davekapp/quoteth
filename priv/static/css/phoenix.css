@@ -87,3 +87,21 @@ footer a:hover {
 footer img {
   height:30px;
 }
+
+.quote-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.quote-enter.quote-enter-active {
+  opacity: 1;
+}
+
+.quote-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.quote-leave.quote-leave-active {
+  opacity: 0.01;
+}
