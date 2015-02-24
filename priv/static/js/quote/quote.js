@@ -14,7 +14,7 @@ var QuoteBox = React.createClass({
     if(!this.state.hasQuotes) {
       $.get(this.props.url, function(data) {
         this.setState({quotes: data, hasQuotes: true});
-        setTimeout(this.getQuotesFromServer, 3300);
+        setTimeout(this.getQuotesFromServer, this.props.refreshInterval);
       }.bind(this));
     } else {
       this.setState({quotes: [], hasQuotes: false});
@@ -53,6 +53,6 @@ var Quote = React.createClass({
 })
 
 React.render(
-  <QuoteBox url="http://localhost:4000/api/v1/quotes/homepage_quotes" pollInterval={2000} />,
+  <QuoteBox url="http://localhost:4000/api/v1/quotes/homepage_quotes" refreshInterval={3300} />,
   document.getElementById("quotes")
 );
