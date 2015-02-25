@@ -14,8 +14,10 @@
     <script src="/js/jquery-ujs.js"></script>
     <script src="/js/phoenix.js"></script>
     <script src="/js/react-0-12-2.js"></script>
-    <script src="/js/react-jsx-transformer-0-12-2.js"></script>
+    <%=# no longer needed after using gulp, but leaving here in case you want to go back to this mode for ease of development%>
+    <%=#script src="/js/react-jsx-transformer-0-12-2.js"></script>%>
     <script src="/js/showdown.min.js"></script>
+    <script src="/js/components/components.js"></script>
   </head>
 
   <body class="site">
