@@ -1,0 +1,14 @@
+{
+"name": "quoteth-app",
+"version": "0.0.1",
+"description": "",
+"author": "David Kapp @Happymrdave",
+"license": "MIT",
+"dependencies": {
+  "gulp": "~3.8.11",
+  "gulp-concat": "~2.5.2",
+  "gulp-rename": "~1.2.0",
+  "gulp-rev": "~3.0.1",
+  "gulp-react": "~2.0.0"
+  }
+}
